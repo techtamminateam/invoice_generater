@@ -1,0 +1,256 @@
+/* Root container */
+.login-container {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #dbe4f3 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Left side */
+.login-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #014f86 0%, #0277bd 100%);
+}
+
+.login-left img {
+  width: 75%;
+  max-width: 420px;
+  filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.3));
+}
+
+/* Right side */
+.login-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9fafc;
+}
+
+/* Login box */
+.login-box {
+  background: #fff;
+  width: 80%;
+  max-width: 440px;
+  padding: 40px 45px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  animation: fadeIn 0.6s ease;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Logo */
+.logo {
+  display: block;
+  margin: 0 auto 20px;
+  width: 160px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 10px 0;
+  border: none;
+  font-size: 16px;
+  background: #e3e8ee;
+  cursor: pointer;
+  color: #555;
+  border-radius: 10px;
+  margin: 0 5px;
+  transition: all 0.3s;
+}
+
+.tabs button.active {
+  background: #014f86;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 79, 134, 0.3);
+}
+
+/* Headings */
+h2 {
+  font-size: 22px;
+  text-align: center;
+  color: #014f86;
+  margin-bottom: 25px;
+  letter-spacing: 0.5px;
+}
+
+/* Form fields */
+form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
+}
+
+form input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s;
+}
+
+form input:focus {
+  border-color: #014f86;
+  outline: none;
+  box-shadow: 0 0 3px rgba(1, 79, 134, 0.3);
+}
+
+/* Error text */
+.error-text {
+  color: #e63946;
+  font-size: 13px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+/* Forgot password */
+.forgot-password {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.forgot-password a {
+  color: #014f86;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+/* Button */
+.create-user-btn {
+  width: 100%;
+  padding: 12px;
+  background: #014f86;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.create-user-btn:hover {
+  background: #013962;
+  transform: scale(1.02);
+}
+
+.create-user-btn:disabled {
+  background: #9ebac7;
+  cursor: not-allowed;
+}
+
+/* Dual field (Admin form) */
+.d-flex {
+  display: flex;
+  gap: 15px;
+}
+
+.d-flex > div {
+  flex: 1;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-left {
+    display: none;
+  }
+
+  .login-right {
+    padding: 30px 10px;
+  }
+
+  .login-box {
+    width: 100%;
+    max-width: 360px;
+  }
+}
+.login-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(270deg, #014f86, #0277bd, #00b4d8, #014f86);
+  background-size: 800% 800%;
+  animation: gradientFlow 5s ease infinite;
+}
+
+/* Optional subtle overlay for extra polish */
+.login-left::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.1), transparent 70%);
+  pointer-events: none;
+  animation: glowPulse 6s ease-in-out infinite alternate;
+}
+
+.login-left img {
+  width: 75%;
+  max-width: 420px;
+  filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.3));
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Subtle glowing animation */
+@keyframes glowPulse {
+  from { opacity: 0.5; transform: scale(1); }
+  to { opacity: 1; transform: scale(1.05); }
+}
+
+.verification-btn{
+  width: 80%;
+  padding: 12px;
+  background: #014f86;
+  color: #fff;
+  border: none;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  cursor: pointer;
+  font-weight: 400;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.verfication{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+}
